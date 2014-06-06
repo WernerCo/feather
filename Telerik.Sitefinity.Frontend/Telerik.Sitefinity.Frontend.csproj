@@ -20,6 +20,8 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <JSLintSkip>\Mvc\Scripts\Angular\angular.min.js|\Mvc\Scripts\Angular\angular-route.min.js|\Mvc\Scripts\Angular\|\Mvc\Scripts\Bootstrap\|\Mvc\Scripts\Kendo\</JSLintSkip>
+    <StyleCopOverrideSettingsFile>Settings.StyleCop</StyleCopOverrideSettingsFile>
+    <BuildToolsStyleCopVersion>4.7.44.0</BuildToolsStyleCopVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,15 +32,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <StyleCopEnabled>True</StyleCopEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;CODE_ANALYSIS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <StyleCopEnabled>True</StyleCopEnabled>
+    <StyleCopTreatErrorsAsWarnings>False</StyleCopTreatErrorsAsWarnings>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -313,6 +318,7 @@
     <EmbeddedResource Include="Mvc\Views\Designer\Designer.ClientReferences.cshtml" />
     <None Include="OpenAccessNuGet.targets" />
     <None Include="packages.config" />
+    <None Include="Settings.StyleCop" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Designers\Scripts\page-editor-services.js" />
@@ -347,7 +353,7 @@
   -->
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties OpenAccess_EnhancementOutputLevel="1" OpenAccess_UpdateDatabase="False" OpenAccess_Enhancing="False" OpenAccess_ConnectionId="DatabaseConnection1" OpenAccess_ConfigFile="App.config" />
+      <UserProperties OpenAccess_ConfigFile="App.config" OpenAccess_ConnectionId="DatabaseConnection1" OpenAccess_Enhancing="False" OpenAccess_UpdateDatabase="False" OpenAccess_EnhancementOutputLevel="1" />
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
@@ -362,4 +368,8 @@
     <OpenAccessPath>$(ProjectDir)..\..\Reference Assemblies\Telerik\OpenAccess</OpenAccessPath>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <Import Project="..\packages\BuildTools.StyleCop.4.7.49.0\tools\StyleCop.targets" Condition="Exists('..\packages\BuildTools.StyleCop.4.7.49.0\tools\StyleCop.targets')" />
+  <Target Name="___packages_BuildTools_StyleCop_4_7_49_0_tools_StyleCop_targets" Condition="$(StyleCopOutputFile)==''" BeforeTargets="BeforeBuild">
+    <Error Text="BuildTools_StyleCop - the BuildTools_StyleCop package has not been restored.&#xD;&#xA;If you are running this from an IDE, make sure NuGet Package Restore has been enabled, then reload the solution and re-run the build.&#xD;&#xA;If you are running this from the command line, run the build again.&#xD;&#xA;If this is a CI server, you may want to make sure NuGet Package Restore runs before your build with:&#xD;&#xA;	msbuild solution.sln /t:restorepackages" />
+  </Target>
 </Project>
