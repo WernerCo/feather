@@ -317,8 +317,7 @@
     <EmbeddedResource Include="Mvc\Scripts\Bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <EmbeddedResource Include="Mvc\Views\Designer\Designer.ClientReferences.cshtml" />
     <None Include="OpenAccessNuGet.targets" />
-    <None Include="packages.config" />
-    <None Include="Settings.StyleCop" />
+    <None Include="packages.config"/>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Designers\Scripts\page-editor-services.js" />
