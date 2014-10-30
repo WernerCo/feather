@@ -173,6 +173,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DynamicModule\MvcWidgetInstallationStrategy.cs" />
     <Compile Include="FilesMonitoring\FileChangeType.cs" />
     <Compile Include="FilesMonitoring\FileMonitoringInitializer.cs" />
     <Compile Include="FilesMonitoring\MonitoredDirectory.cs" />
@@ -183,6 +184,7 @@
     <Compile Include="InlineEditing\HtmlRegion.cs" />
     <Compile Include="InterfaceMappings.cs" />
     <Compile Include="Mvc\Controllers\ContentPagerController.cs" />
+    <Compile Include="Mvc\Controllers\DynamicContentController.cs" />
     <Compile Include="Mvc\Helpers\CustomFieldsHelpers.cs" />
     <Compile Include="Mvc\Helpers\HtmlHelperExtensions.cs" />
     <Compile Include="Mvc\Helpers\ResourceHelper.cs" />
@@ -351,6 +353,7 @@
     <None Include="assets\src\sass\sitefinity-backend.sass" />
     <None Include="assets\src\sass\_utility-classes.sass" />
     <None Include="assets\src\sass\_variables.sass" />
+    <None Include="Mvc\Views\DynamicContent\Index.cshtml" />
     <None Include="OpenAccessNuGet.targets" />
     <None Include="packages.config">
       <SubType>Designer</SubType>

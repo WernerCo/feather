@@ -10,6 +10,8 @@ using Telerik.Microsoft.Practices.Unity;
 using Telerik.Sitefinity.Abstractions;
 using Telerik.Sitefinity.Abstractions.VirtualPath;
 using Telerik.Sitefinity.Configuration;
+using Telerik.Sitefinity.DynamicModules.Builder.Install;
+using Telerik.Sitefinity.Frontend.DynamicModule;
 using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Routing;
 using Telerik.Sitefinity.Frontend.Resources;
@@ -226,6 +228,7 @@ namespace Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers
         protected virtual void InitializeCustomRouting()
         {
             ObjectFactory.Container.RegisterType<IControllerActionInvoker, DynamicUrlParamActionInvoker>(new ContainerControlledLifetimeManager());
+            ObjectFactory.Container.RegisterType<IWidgetInstallationStrategy, MvcWidgetInstallationStrategy>(new ContainerControlledLifetimeManager());
             ObjectFactory.Container.RegisterType<IRouteParamResolver, CategoryParamResolver>("category");
             ObjectFactory.Container.RegisterType<IRouteParamResolver, TagParamResolver>("tag");
         }
