@@ -37,25 +37,19 @@
                             sf-item-selected="isItemSelectedInDialog(dataItem)"
                             sf-item-disabled="itemDisabled(dataItem)"
                             sf-get-children="getChildren(parentId)"
-                            sf-identifier-field-value="bindIdentifierField(dataItem)"
-                            class="k-treeview--selection"></sf-items-tree>
+                            sf-identifier-field-value="bindIdentifierField(dataItem)"></sf-items-tree>
 
                         <div ng-repeat="item in items"
                                 ng-hide="filter.isEmpty"
+                                style="text-overflow: ellipsis; overflow: hidden;"
                                 ng-class="{'list-group-item':true, 'active': isItemSelectedInDialog(item), 'list-group-item-multiselect': multiselect }"
                                 ng-click="itemClicked($index, item)">
 
-                            <input type="checkbox" ng-checked="isItemSelectedInDialog(item)" ng-show="multiselect" ng-hide="itemDisabled(item)">
+                            <input type="checkbox" ng-checked="isItemSelectedInDialog(item)" ng-show="multiselect">
 
-                            <div>
-                                <div ng-bind="bindIdentifierField(item)" style="float:left; display: inline"  />
+                            <div ng-bind="bindIdentifierField(item)" />
 
-                                <div ng-show="itemDisabled(item)" style="float:left; display: inline; margin-left:5px">(not translated)</div>
-                            </div>
-
-                           <div ng-class="{'text-muted': !isItemSelectedInDialog(item)}">{{item.ParentTitlesPath}}</div>
-
-                            
+                            {{item.ParentTitlesPath}}
                         </div>
                     </div>
                     <div ng-hide="items.length || showLoadingIndicator"><i>No items found</i></div>
