@@ -10,7 +10,8 @@
                 restrict: 'A',
                 link: {
                     pre: function (scope, element, attrs, ctrl) {
-                        var taxonomyId = ctrl.$scope.taxonomyId;
+                        //var taxonomyId = ctrl.$scope.taxonomyId;
+                        var taxonomyId = attrs.taxonomyId;
                         if (!taxonomyId || taxonomyId === emptyGuid) {
                             taxonomyId = defaultTaxonomyId;
                         }
@@ -25,7 +26,7 @@
 
                         ctrl.selectorType = 'TaxonSelector';
                         ctrl.dialogTemplateUrl = 'Selectors/sf-taxon-selector.html';
-                        ctrl.closedDialogTemplateUrl = 'Selectors/bubbles-selection.html';
+                        ctrl.closedDialogTemplateUrl = attrs.multiselect ? 'Selectors/list-group-selection.html' : 'Selectors/bubbles-selection.html';
                         ctrl.$scope.dialogTemplateId = 'sf-taxon-selector-template';
                     }
                 }

@@ -423,6 +423,9 @@
     <EmbeddedResource Include="Mvc\Scripts\Templates\style-dropdown.html" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Selectors\Taxons\sf-hierarchical-taxon-selector.html" />
+    <Content Include="Selectors\Taxons\sf-hierarchical-taxon-selector.js" />
+    <EmbeddedResource Include="Services\hierarchical-taxon-service.js" />
     <EmbeddedResource Include="Selectors\sf-page-selector.js" />
     <EmbeddedResource Include="Selectors\sf-page-selector.html" />
     <EmbeddedResource Include="Selectors\sf-items-tree.html" />

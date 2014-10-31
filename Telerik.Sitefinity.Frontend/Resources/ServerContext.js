@@ -5,6 +5,7 @@
     var currentPackage = '{{currentPackage}}';
     var frontendLanguages = JSON.parse('{{frontendLanguages}}');
     var currentFrontendRootNodeId = '{{currentFrontendRootNodeId}}';
+    var categoriesTaxonomyId = "e5cd6d69-1543-427b-ad62-688a99f5e7d4";
 
     if (applicationPath.length === 0 || applicationPath.charAt(applicationPath.length - 1) !== '/')
         applicationPath = applicationPath + '/';
@@ -87,4 +88,8 @@
     sitefinity.setCurrentFrontendRootNodeId = function (value) {
         currentFrontendRootNodeId = value;
     };
+
+    sitefinity.getCategoriesTaxonomyId = function () {
+        return categoriesTaxonomyId;
+    }
 })();

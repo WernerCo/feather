@@ -16,7 +16,6 @@
                     provider: '=?',
                     change: '=',
                     sortable: '=?',
-                    taxonomyId: '=?', /* sf-taxon-selector */
                     itemType: '=?', /* sf-dynamic-items-selector */
                     identifierField: '=?'
                 },
@@ -214,7 +213,7 @@
                             }
                         });
 
-                        scope.$watchCollection('selectedIds', function (newIds, oldIds) { 
+                        scope.$watchCollection('selectedIds', function (newIds, oldIds) {
                             if (newIds && newIds.length > 0 && !areArrayEquals(newIds, currentSelectedIds)) {
                                 fetchSelectedItems();
                             }
@@ -256,7 +255,7 @@
                                 }
                                 else {
                                     Array.prototype.push.apply(scope.items, items);
-                                }                                
+                                }
                             }
                         };
 
@@ -349,7 +348,7 @@
 
                             scope.itemsPromise = ctrl.getItems(scope.paging.skip, scope.paging.take)
                             .then(onFirstPageLoadedSuccess, onError);
-                            
+
                             scope.itemsPromise.finally(function () {
                                 scope.showLoadingIndicator = false;
                             });
@@ -376,7 +375,7 @@
 
                             return ids.length > 0;
                         };
-                        
+
                         scope.isItemSelectedInDialog = function (item) {
                             for (var i = 0; i < scope.selectedItemsInTheDialog.length; i++) {
                                 if (scope.selectedItemsInTheDialog[i].item.Id === item.Id) {
