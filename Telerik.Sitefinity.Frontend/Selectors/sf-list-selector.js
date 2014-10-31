@@ -390,7 +390,7 @@
                             }).length;
                         };
 
-                        scope.multiselect = !!attrs.multiselect;
+                        scope.multiselect = (attrs.multiselect && attrs.multiselect.toLowerCase() == "true") ? true : false;
 
                         scope.selectedItemsInTheDialog = [];
 
