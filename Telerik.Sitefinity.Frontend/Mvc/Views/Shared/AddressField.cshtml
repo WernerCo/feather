@@ -7,21 +7,16 @@
 <div class="@ViewBag.CssClass">
     @if (!Model.FieldTitle.IsNullOrEmpty())
     {
-    <div class="sfitemFieldLbl">
-        @Model.FieldTitle:
-    </div>
+    <strong>@Model.FieldTitle:</strong>
     }
 
+    <address>@Model.Address.GetFormattedAddress(Model.AddressFormat)</address>
+
     <div>
-        <div class="sfitemAddressTxt">
-            @Model.Address.GetFormattedAddress(Model.AddressFormat)
-        </div>
-        <div>
-            <a class="viewMapLnk">View map</a>
-            <div class="addressMapWrp" style="display:none">
-                <input class="addressValueInput" type="hidden" value="@(new JavaScriptSerializer().Serialize(Model.Address))" />
-                <div class="mapContainer" style="width:500px; height:500px"></div>
-            </div>
+        <a class="viewMapLnk">View map</a>
+        <div class="addressMapWrp" style="display:none">
+            <input class="addressValueInput" type="hidden" value="@(new JavaScriptSerializer().Serialize(Model.Address))" />
+            <div class="mapContainer" style="width:500px; height:500px"></div>
         </div>
     </div>
 </div>

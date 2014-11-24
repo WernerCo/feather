@@ -3,15 +3,13 @@
 @using Telerik.Sitefinity.Model;
 @using Telerik.Sitefinity.Libraries.Model;
 
-<div class="sfSnglRelatedItmWrp">
+<div>
     @if (!Model.FieldTitle.IsNullOrEmpty())
     {
-        <h2 class="sfrelatedItmTitle">@Model.FieldTitle:</h2>
+    <strong>@Model.FieldTitle:</strong>
     }
 
-    <div class="sfrelatedItmWrp">
-        <video controls>
-            <source src='@(((MediaContent)Model.SingleRelatedItem).MediaUrl)'>
-        </video>
-    </div>
+    <video controls>
+        <source src='@(((MediaContent)Model.SingleRelatedItem).MediaUrl)'>
+    </video>
 </div>

@@ -2,19 +2,17 @@
 
 @using Telerik.Sitefinity.Model;
 
-<div class="sfMultiRelatedItmsWrp">
+<div>
     @if (!Model.FieldTitle.IsNullOrEmpty())
     {
-        <h2 class="sfrelatedItmTitle">@Model.FieldTitle:</h2>
+        <strong>@Model.FieldTitle:</strong>
     }
 
-    <ul class="sfrelatedList sflist">
+    <ul>
 
     @foreach (IDynamicFieldsContainer relatedItem in Model.RelatedItemCollection)
     {
-        <li class="sfrelatedListItem sflistitem">
-            <a href='@Telerik.Sitefinity.RelatedData.RelatedDataExtensions.GetDefaultUrl(relatedItem)'>@relatedItem.GetValue(Model.IdentifierField)</a>
-        </li>   
+        <li><a href='@Telerik.Sitefinity.RelatedData.RelatedDataExtensions.GetDefaultUrl(relatedItem)'>@relatedItem.GetValue(Model.IdentifierField)</a></li>   
     }
     </ul>
 </div>

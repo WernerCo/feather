@@ -2,15 +2,12 @@
 
 @using Telerik.Sitefinity.Model;
 
-<div class="sfSnglRelatedItmWrp">
+<div>
     @if (!Model.FieldTitle.IsNullOrEmpty())
     {
-        <h2 class="sfrelatedItmTitle">@Model.FieldTitle:</h2>
+        <strong>@Model.FieldTitle:</strong>
     }
 
-    <div class="sfrelatedItmWrp">
-         <a href='@Telerik.Sitefinity.RelatedData.RelatedDataExtensions.GetDefaultUrl(Model.SingleRelatedItem)'>
-             @(((IDynamicFieldsContainer)Model.SingleRelatedItem).GetValue(Model.IdentifierField))
-         </a>
-    </div>
+
+        <a href='@Telerik.Sitefinity.RelatedData.RelatedDataExtensions.GetDefaultUrl(Model.SingleRelatedItem)'>@(((IDynamicFieldsContainer)Model.SingleRelatedItem).GetValue(Model.IdentifierField))</a>
 </div>

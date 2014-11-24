@@ -5,14 +5,12 @@
 <div>
     @if (!Model.FieldTitle.IsNullOrEmpty())
     {
-        <h2>@Model.FieldTitle</h2>
+        <strong>@Model.FieldTitle</strong>
     }
     <ul>
         @foreach(var contentLink in Model.MediaItems)
         {
-            <li>
-                <img src='@contentLink.GetImage().ThumbnailUrl' alt='@contentLink.GetImage().AlternativeText' title='@contentLink.GetImage().Title' />
-            </li>
+            <li><img src='@contentLink.GetImage().ThumbnailUrl' alt='@contentLink.GetImage().AlternativeText' title='@contentLink.GetImage().Title' /></li>
         }
     </ul>
 </div>

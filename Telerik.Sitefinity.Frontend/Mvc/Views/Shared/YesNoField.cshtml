@@ -5,12 +5,8 @@
 <div class="@ViewBag.CssClass">
     @if (!Model.FieldTitle.IsNullOrEmpty())
     {
-    <div class="sfTxtLbl">
-        @Model.FieldTitle:
-    </div>
+    <strong>@Model.FieldTitle:</strong>
     }
 
-    <div class="sfChoiceContent" data-sf-field="@Model.FieldName" data-sf-ftype="YesNo">
-        @(Model.YesNoValue ? Res.Get<Labels>().Yes : Res.Get<Labels>().No)
-    </div>    
+    <span data-sf-field="@Model.FieldName" data-sf-ftype="YesNo">@(Model.YesNoValue ? Res.Get<Labels>().Yes : Res.Get<Labels>().No)</span>    
 </div>

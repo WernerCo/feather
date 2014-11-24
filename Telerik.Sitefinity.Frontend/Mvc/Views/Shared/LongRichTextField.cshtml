@@ -4,10 +4,8 @@
 <div class="@ViewBag.CssClass">
     @if (!Model.FieldTitle.IsNullOrEmpty())
     {
-        <div>@Model.FieldTitle</div>
+        <strong>@Model.FieldTitle</strong>
     }
 
-    <div data-sf-field="@Model.FieldName" data-sf-ftype="LongText">
-        @Model.FieldValue
-    </div>
+    <div data-sf-field="@Model.FieldName" data-sf-ftype="LongText">@Model.FieldValue</div>
 </div>

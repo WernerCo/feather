@@ -5,10 +5,8 @@
 <div>
     @if (!Model.FieldTitle.IsNullOrEmpty())
     {
-        <h2>@Model.FieldTitle</h2>
+        <strong>@Model.FieldTitle</strong>
     }
     
-    <div>
-         <img src='@Model.MediaItem.GetImage().MediaUrl' alt='@Model.MediaItem.GetImage().AlternativeText' title='@Model.MediaItem.GetImage().Title' />
-    </div>
+    <div><img src='@Model.MediaItem.GetImage().MediaUrl' alt='@Model.MediaItem.GetImage().AlternativeText' title='@Model.MediaItem.GetImage().Title' /></div>
 </div>

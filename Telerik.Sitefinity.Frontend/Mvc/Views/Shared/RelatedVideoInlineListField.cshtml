@@ -3,16 +3,16 @@
 @using Telerik.Sitefinity.Model;
 @using Telerik.Sitefinity.Libraries.Model;
 
-<div class="sfMultiRelatedItmsWrp">
+<div>
     @if (!Model.FieldTitle.IsNullOrEmpty())
     {
-        <h2 class="sfrelatedItmTitle">@Model.FieldTitle:</h2>
+        <strong>@Model.FieldTitle:</strong>
     }
 
-    <ul class="sfrelatedList sflist">
+    <ul>
     @foreach (MediaContent relatedItem in Model.RelatedItemCollection)
     {
-        <li class="sfrelatedListItem sflistitem">
+        <li class="media">
             <video controls>
                 <source  src='@relatedItem.MediaUrl'>
             </video>

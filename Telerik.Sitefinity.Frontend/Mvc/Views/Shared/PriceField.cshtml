@@ -4,11 +4,7 @@
 <div class="@ViewBag.CssClass">
     @if (!Model.FieldTitle.IsNullOrEmpty())
     {
-    <div class="sfitemFieldLbl">
-        @Model.FieldTitle:
-    </div>
+    <strong>@Model.FieldTitle:</strong>
     }
-    <div>
-        @string.Format(Model.FieldValue, Model.Format)
-    </div>
+    <span>@string.Format(Model.FieldValue, Model.Format)</span>
 </div>

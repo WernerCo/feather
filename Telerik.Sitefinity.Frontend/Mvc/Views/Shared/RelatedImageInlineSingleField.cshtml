@@ -3,13 +3,11 @@
 @using Telerik.Sitefinity.Model;
 @using Telerik.Sitefinity.Libraries.Model;
 
-<div class="sfSnglRelatedItmWrp">
+<div>
     @if (!Model.FieldTitle.IsNullOrEmpty())
     {
-        <h2 class="sfrelatedItmTitle">@Model.FieldTitle:</h2>
+    <strong>@Model.FieldTitle</strong>
     }
 
-    <div class="sfrelatedItmWrp">
-         <img src='@(((MediaContent)Model.SingleRelatedItem).MediaUrl)' alt='@(((Image)Model.SingleRelatedItem).AlternativeText)' title='@(((IDynamicFieldsContainer)Model.SingleRelatedItem).GetValue(Model.IdentifierField))' />
-    </div>
+    <img src='@(((MediaContent)Model.SingleRelatedItem).MediaUrl)' alt='@(((Image)Model.SingleRelatedItem).AlternativeText)' title='@(((IDynamicFieldsContainer)Model.SingleRelatedItem).GetValue(Model.IdentifierField))' />
 </div>

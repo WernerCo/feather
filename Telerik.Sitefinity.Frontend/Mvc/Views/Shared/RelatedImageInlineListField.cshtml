@@ -3,19 +3,17 @@
 @using Telerik.Sitefinity.Model;
 @using Telerik.Sitefinity.Libraries.Model;
 
-<div class="sfMultiRelatedItmsWrp">
+<div>
     @if (!Model.FieldTitle.IsNullOrEmpty())
     {
-        <h2 class="sfrelatedItmTitle">@Model.FieldTitle:</h2>
+        <strong>@Model.FieldTitle:</strong>
     }
 
-    <ul class="sfrelatedList sflist">
+    <ul>
     @foreach (IDynamicFieldsContainer relatedItem in Model.RelatedItemCollection)
     {
-        <li class="sfrelatedListItem sflistitem">
-            <a href='@(((MediaContent)relatedItem).MediaUrl)'>
-                <img src='@(((MediaContent)relatedItem).ThumbnailUrl)' alt='@(((Image)relatedItem).AlternativeText)' title='@relatedItem.GetValue(Model.IdentifierField)' />
-            </a>
+        <li class="media">
+            <a href='@(((MediaContent)relatedItem).MediaUrl)'><img src='@(((MediaContent)relatedItem).ThumbnailUrl)' alt='@(((Image)relatedItem).AlternativeText)' title='@relatedItem.GetValue(Model.IdentifierField)' /></a>
         </li>   
     }
     </ul>

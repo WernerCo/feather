@@ -5,16 +5,12 @@
 <div>
     @if (!Model.FieldTitle.IsNullOrEmpty())
     {
-        <h2>@Model.FieldTitle</h2>
+        <strong>@Model.FieldTitle</strong>
     }
     <ul>
         @foreach(var contentLink in Model.MediaItems)
         {
-            <li class="sfrelatedListItem sflistitem">
-                <a href='@contentLink.GetDocument().MediaUrl)'>
-                    @contentLink.GetDocument().Title
-                </a>
-            </li>         
+            <li><a href='@contentLink.GetDocument().MediaUrl)'>@contentLink.GetDocument().Title</a></li>         
         }
     </ul>
 </div>
